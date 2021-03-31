@@ -1,3 +1,9 @@
+#OSX
+.DS_Store
+#eclipse stuff
+**/.settings
+**/.project
+**/.classpath
 # User-specific stuff
 .idea/**/workspace.xml
 .idea/**/tasks.xml
