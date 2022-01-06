@@ -9,7 +9,7 @@ jobs:
         name: Build Project
         uses: UbiqueInnovation/.github/.github/workflows/mvn_install.yml@main
         with:
-            parent_pom: swisstopo-backend/pom.xml
+            parent_pom: backend-jvm-lib/pom.xml
         secrets:
             artifactory_user: ${{ secrets.UB_ARTIFACTORY_USER}}
             artifactory_password: ${{ secrets.UB_ARTIFACTORY_PASSWORD }}
@@ -18,7 +18,7 @@ jobs:
         name: Deploy Project to Artifactory
         uses: UbiqueInnovation/.github/.github/workflows/mvn_package_deploy.yml@main
         with:
-            parent_pom: swisstopo-backend/pom.xml
+            parent_pom: backend-jvm-lib/pom.xml
             ref_name: ${{ github.ref_name }}
         secrets:
             artifactory_user: ${{ secrets.UB_ARTIFACTORY_USER}}
