@@ -13,6 +13,8 @@ jobs:
         secrets:
             artifactory_user: ${{ secrets.UB_ARTIFACTORY_USER}}
             artifactory_password: ${{ secrets.UB_ARTIFACTORY_PASSWORD }}
+            artifactory_url: ${{ secrets.UB_ARTIFACTORY_URL }}
+            artifactory_repo: ${{ secrets.UB_ARTIFACTORY_REPO_BACKEND }}
 
     deploy:
         name: Deploy Project to Artifactory
@@ -23,3 +25,5 @@ jobs:
         secrets:
             artifactory_user: ${{ secrets.UB_ARTIFACTORY_USER}}
             artifactory_password: ${{ secrets.UB_ARTIFACTORY_PASSWORD }}
+            artifactory_url: ${{ secrets.UB_ARTIFACTORY_URL }}
+            artifactory_repo: ${{ secrets.UB_ARTIFACTORY_REPO_BACKEND }}
