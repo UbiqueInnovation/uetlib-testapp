@@ -19,6 +19,7 @@ jobs:
 
     deploy-artifactory:
         name: Deploy Project to Artifactory
+        needs: [ build ]
         uses: UbiqueInnovation/.github/.github/workflows/mvn_package_deploy.yml@main
         with:
             ref_name: ${{ github.ref_name }}
