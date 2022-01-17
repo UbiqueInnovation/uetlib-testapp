@@ -12,7 +12,7 @@ jobs:
             ref_name: ${{ github.ref_name }}
             parent_pom: backend-jvm-lib/pom.xml
         secrets:
-            artifactory_user: ${{ secrets.UB_ARTIFACTORY_USER}}
+            artifactory_user: ${{ secrets.UB_ARTIFACTORY_USER }}
             artifactory_password: ${{ secrets.UB_ARTIFACTORY_PASSWORD }}
             artifactory_url: ${{ secrets.UB_ARTIFACTORY_URL }}
             artifactory_repo: ${{ secrets.UB_ARTIFACTORY_REPO_BACKEND }}
@@ -25,7 +25,7 @@ jobs:
             ref_name: ${{ github.ref_name }}
             parent_pom: backend-jvm-lib/pom.xml
         secrets:
-            artifactory_user: ${{ secrets.UB_ARTIFACTORY_USER}}
+            artifactory_user: ${{ secrets.UB_ARTIFACTORY_USER }}
             artifactory_password: ${{ secrets.UB_ARTIFACTORY_PASSWORD }}
             artifactory_url: ${{ secrets.UB_ARTIFACTORY_URL }}
             artifactory_repo: ${{ secrets.UB_ARTIFACTORY_REPO_BACKEND }}
