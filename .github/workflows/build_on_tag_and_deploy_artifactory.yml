@@ -7,7 +7,7 @@ on:
 jobs:
     build:
         name: Build Project
-        uses: UbiqueInnovation/.github/.github/workflows/mvn_install.yml@main
+        uses: UbiqueInnovation/workflows-backend/.github/workflows/mvn_install.yml@main
         with:
             ref_name: ${{ github.ref_name }}
             parent_pom: backend-jvm-lib/pom.xml
@@ -20,7 +20,7 @@ jobs:
     deploy-artifactory:
         name: Deploy Project to Artifactory
         needs: [ build ]
-        uses: UbiqueInnovation/.github/.github/workflows/mvn_package_deploy.yml@main
+        uses: UbiqueInnovation/workflows-backend/.github/workflows/mvn_package_deploy.yml@main
         with:
             ref_name: ${{ github.ref_name }}
             parent_pom: backend-jvm-lib/pom.xml

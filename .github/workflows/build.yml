@@ -10,7 +10,7 @@ on:
 jobs:
     build:
         name: Build Project
-        uses: UbiqueInnovation/.github/.github/workflows/mvn_install.yml@main
+        uses: UbiqueInnovation/workflows-backend/.github/workflows/mvn_install.yml@main
         with:
             parent_pom: backend-jvm-lib/pom.xml
         secrets:
@@ -21,7 +21,7 @@ jobs:
 
     deploy-dev-code_quality:
         name: Code Analysis (Sonar Cloud)
-        uses: UbiqueInnovation/.github/.github/workflows/mvn_verify_sonar.yml@main
+        uses: UbiqueInnovation/workflows-backend/.github/workflows/mvn_verify_sonar.yml@main
         with:
             parent_pom: backend-jvm-lib/pom.xml
             ref_name: ${{ github.ref_name }}
