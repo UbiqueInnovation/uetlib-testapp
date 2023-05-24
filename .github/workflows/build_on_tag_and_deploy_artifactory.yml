@@ -6,7 +6,7 @@ on:
 
 jobs:
     build:
-        name: Build Project
+        name: Build and test Project
         uses: UbiqueInnovation/workflows-backend/.github/workflows/mvn_install.yml@main
         with:
             ref_name: ${{ github.ref_name }}
