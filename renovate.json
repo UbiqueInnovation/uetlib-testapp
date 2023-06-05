@@ -1,22 +1,12 @@
 {
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
     "extends": [
-        "config:base"
+        "config:base",
+        "github>UbiqueInnovation/renovate-config-backend:base"
     ],
     "reviewers": [
         "dsparber",
         "kistlers"
-    ],
-    "packageRules": [
-        {
-            "matchPackagePatterns": [
-                "*"
-            ],
-            "groupName": "dependencies",
-            "excludePackagePrefixes": [
-                "ch.ubique:backend-jvm-lib"
-            ]
-        }
     ],
     "schedule": [
         "before 3am on the first day of the week"
