@@ -36,6 +36,6 @@ jobs:
         uses: UbiqueInnovation/workflows-backend/.github/workflows/github_release.yml@feature/github-release
         with:
             ref_name: ${{ github.ref_name }}
-            release_option_prerelease: ${{ contains(github.event.inputs.tag, '-') }}
+            release_option_prerelease: ${{ contains(github.ref_name, '-') }}
         secrets:
             repo_token: ${{ secrets.GITHUB_TOKEN }}
