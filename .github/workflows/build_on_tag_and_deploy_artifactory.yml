@@ -31,11 +31,11 @@ jobs:
             artifactory_repo: ${{ secrets.UB_ARTIFACTORY_REPO_BACKEND }}
 
     release:
-        name: Create new ${{ contains(github.event.inputs.tag, '-') && 'pre' }}release
+        name: Create new ${{ contains(github.event.inputs.tag, '-') == true && 'Prerelease' || 'Release' }}
         needs: [ deploy-artifactory ]
         uses: UbiqueInnovation/workflows-backend/.github/workflows/github_release.yml@feature/github-release
         with:
             ref_name: ${{ github.ref_name }}
-            release_option_prerelease: ${{ contains(github.ref_name, '-') }}
+            release_option_prerelease: ${{ contains(github.event.inputs.tag, '-') }}
         secrets:
             repo_token: ${{ secrets.GITHUB_TOKEN }}
