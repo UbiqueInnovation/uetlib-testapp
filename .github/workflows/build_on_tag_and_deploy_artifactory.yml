@@ -30,24 +30,12 @@ jobs:
             artifactory_url: ${{ secrets.UB_ARTIFACTORY_URL }}
             artifactory_repo: ${{ secrets.UB_ARTIFACTORY_REPO_BACKEND }}
 
-    create_prerelease:
-        name: Create new Prerelease
-        if: ${{ contains(github.event.inputs.tag, '-') }}
+    release:
+        name: Create new ${{ contains(github.ref_name, '-') == true && 'Prerelease' || 'Release' }}
         needs: [ deploy-artifactory ]
         uses: UbiqueInnovation/workflows-backend/.github/workflows/github_release.yml@feature/github-release
         with:
             ref_name: ${{ github.ref_name }}
-            release_option_prerelease: true
-        secrets:
-            repo_token: ${{ secrets.GITHUB_TOKEN }}
-
-    create_release:
-        name: Create new Release
-        if: ${{ ! contains(github.event.inputs.tag, '-') }}
-        needs: [ deploy-artifactory ]
-        uses: UbiqueInnovation/workflows-backend/.github/workflows/github_release.yml@feature/github-release
-        with:
-            ref_name: ${{ github.ref_name }}
-            release_option_prerelease: false
+            release_option_prerelease: ${{ contains(github.ref_name, '-') }}
         secrets:
             repo_token: ${{ secrets.GITHUB_TOKEN }}
