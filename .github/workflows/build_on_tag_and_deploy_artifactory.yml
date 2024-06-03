@@ -33,7 +33,7 @@ jobs:
     release:
         name: Create new ${{ contains(github.ref_name, '-') == true && 'Prerelease' || 'Release' }}
         needs: [ deploy-artifactory ]
-        uses: UbiqueInnovation/workflows-backend/.github/workflows/github_release.yml@feature/github-release
+        uses: UbiqueInnovation/workflows-backend/.github/workflows/github_release.yml@main
         with:
             ref_name: ${{ github.ref_name }}
             release_option_prerelease: ${{ contains(github.ref_name, '-') }}
