@@ -2,7 +2,7 @@ name: Build on Tag and Deploy Artifactory
 on:
     push:
         tags:
-        - v*
+            - v*
 
 jobs:
     build:
@@ -33,9 +33,10 @@ jobs:
     release:
         name: Create new ${{ contains(github.ref_name, '-') == true && 'Prerelease' || 'Release' }}
         needs: [ deploy-artifactory ]
-        uses: UbiqueInnovation/workflows-backend/.github/workflows/github_release.yml@main
+        uses: UbiqueInnovation/workflows-backend/.github/workflows/github_release.yml@feature/gh-release-changelog
         with:
             ref_name: ${{ github.ref_name }}
             release_option_prerelease: ${{ contains(github.ref_name, '-') }}
+            changelog_file: CHANGELOG.md
         secrets:
             repo_token: ${{ secrets.GITHUB_TOKEN }}
