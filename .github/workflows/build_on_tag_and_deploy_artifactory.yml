@@ -30,7 +30,7 @@ jobs:
             artifactory_url: ${{ secrets.UB_ARTIFACTORY_URL }}
             artifactory_repo: ${{ secrets.UB_ARTIFACTORY_REPO_BACKEND }}
 
-    release:
+    create_github_release:
         name: Create new ${{ contains(github.ref_name, '-') == true && 'Prerelease' || 'Release' }}
         needs: [ deploy-artifactory ]
         uses: UbiqueInnovation/workflows-backend/.github/workflows/github_release.yml@main
