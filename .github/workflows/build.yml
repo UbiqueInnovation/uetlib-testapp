@@ -9,7 +9,7 @@ on:
 jobs:
     build:
         name: Build Project
-        uses: UbiqueInnovation/workflows-backend/.github/workflows/mvn_install.yml@fix/mvn-install-from-branch
+        uses: UbiqueInnovation/workflows-backend/.github/workflows/mvn_install.yml@main
         with:
             parent_pom: backend-jvm-lib/pom.xml
             ref_name: ${{ github.ref_name }}
