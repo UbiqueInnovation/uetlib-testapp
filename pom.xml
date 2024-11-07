@@ -15,8 +15,8 @@
     <dependencies>
         <dependency>
             <groupId>ch.ubique</groupId>
-            <artifactId>uetlib-job</artifactId>
-            <version>1.0.0-alpha.3</version>
+            <artifactId>uetlib-geo-job</artifactId>
+            <version>1.0.0-alpha.19</version>
         </dependency>
 
         <dependency>
