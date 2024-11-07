@@ -1,0 +1,13 @@
+services:
+    uetlib_db_mariadb:
+        image: mariadb:11
+        command: --mysql-native-password=ON --default-authentication-plugin=mysql_native_password --character-set-server=utf8mb4 --collation-server=utf8mb4_general_ci
+        environment:
+            MYSQL_DATABASE: uetlib
+            MYSQL_USER: uetlib
+            MYSQL_PASSWORD: uetlib
+            MYSQL_ROOT_PASSWORD: password
+        ports:
+            - '3321:3306'
+        volumes:
+            - ./init:/docker-entrypoint-initdb.d
