@@ -16,7 +16,7 @@
         <dependency>
             <groupId>ch.ubique</groupId>
             <artifactId>uetlib-geo-job</artifactId>
-            <version>1.0.0-alpha.19</version>
+            <version>1.0.0-alpha.17</version>
         </dependency>
 
         <dependency>
