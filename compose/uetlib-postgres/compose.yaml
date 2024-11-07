@@ -1,0 +1,10 @@
+services:
+    uetlib_db_postgres:
+        image: postgres
+        environment:
+            POSTGRES_DATABASE: uetlib
+            POSTGRES_PASSWORD: uetlib
+            POSTGRES_DB: uetlib
+            POSTGRES_USER: uetlib
+        ports:
+        - "5030:5432"

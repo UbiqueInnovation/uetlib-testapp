@@ -10,7 +10,7 @@ jobs:
         uses: UbiqueInnovation/workflows-backend/.github/workflows/mvn_install.yml@main
         with:
             ref_name: ${{ github.ref_name }}
-            parent_pom: backend-jvm-lib/pom.xml
+            parent_pom: pom.xml
         secrets:
             artifactory_user: ${{ secrets.UB_ARTIFACTORY_USER }}
             artifactory_password: ${{ secrets.UB_ARTIFACTORY_PASSWORD }}
@@ -23,7 +23,7 @@ jobs:
         uses: UbiqueInnovation/workflows-backend/.github/workflows/mvn_package_deploy.yml@main
         with:
             ref_name: ${{ github.ref_name }}
-            parent_pom: backend-jvm-lib/pom.xml
+            parent_pom: pom.xml
         secrets:
             artifactory_user: ${{ secrets.UB_ARTIFACTORY_USER }}
             artifactory_password: ${{ secrets.UB_ARTIFACTORY_PASSWORD }}
