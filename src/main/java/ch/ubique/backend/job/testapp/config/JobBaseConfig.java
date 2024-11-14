@@ -4,7 +4,7 @@ import ch.ubique.backend.core.jackson.ObjectMapperUtils;
 import ch.ubique.backend.core.springdoc.SpringDocConfig;
 import ch.ubique.backend.job.annotation.EnableJobs;
 import ch.ubique.backend.problem.springdoc.SpringDocProblem;
-import ch.ubique.backend.storage.annotations.EnableStorages;
+import ch.ubique.backend.storage.spring.annotations.EnableStorages;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
