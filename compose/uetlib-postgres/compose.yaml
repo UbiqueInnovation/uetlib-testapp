@@ -1,6 +1,6 @@
 services:
     uetlib_db_postgres:
-        image: postgres
+        image: postgres:17
         environment:
             POSTGRES_DATABASE: uetlib
             POSTGRES_PASSWORD: uetlib
