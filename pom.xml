@@ -74,14 +74,14 @@
             <dependency>
                 <groupId>ch.ubique</groupId>
                 <artifactId>uetlib-bom</artifactId>
-                <version>1.3.1</version>
+                <version>1.3.2</version>
                 <scope>import</scope>
                 <type>pom</type>
             </dependency>
             <dependency>
                 <groupId>ch.ubique</groupId>
                 <artifactId>uetlib-self-bom</artifactId>
-                <version>1.2.39</version>
+                <version>1.2.41</version>
                 <scope>import</scope>
                 <type>pom</type>
             </dependency>
