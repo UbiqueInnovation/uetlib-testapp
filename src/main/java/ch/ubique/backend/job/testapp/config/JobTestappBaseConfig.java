@@ -6,6 +6,8 @@ import ch.ubique.backend.storage.spring.annotations.EnableStorages;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import org.apache.hc.client5.http.impl.classic.CloseableHttpClient;
+import org.apache.hc.client5.http.impl.classic.HttpClients;
 import org.springframework.boot.persistence.autoconfigure.EntityScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -16,11 +18,16 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @EnableJpaRepositories(basePackages = "ch.ubique.backend.job.data.repository")
 @EnableJobs(basePackages = "ch.ubique.backend.job")
 @EnableStorages(basePackages = "ch.ubique.backend.job.storage")
-public class JobBaseConfig {
+public class JobTestappBaseConfig {
 
     @Bean
     ObjectMapper objectMapper() {
         // If you need JTS support for geometries, use ObjectMapperJtsUtils from geo module
         return ObjectMapperUtils.objectMapper();
+    }
+
+    @Bean
+    CloseableHttpClient httpClient() {
+        return HttpClients.createSystem();
     }
 }
