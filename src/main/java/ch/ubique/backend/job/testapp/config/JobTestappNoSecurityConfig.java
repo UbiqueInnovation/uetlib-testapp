@@ -11,7 +11,7 @@ import org.springframework.security.web.SecurityFilterChain;
 @Profile("no-security")
 @Configuration
 @EnableWebSecurity
-public class JobNoSecurityConfig {
+public class JobTestappNoSecurityConfig {
 
     @Bean
     SecurityFilterChain filterChain(final HttpSecurity http) throws Exception {

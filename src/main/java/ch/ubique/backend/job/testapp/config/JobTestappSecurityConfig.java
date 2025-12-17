@@ -26,7 +26,7 @@ import javax.crypto.spec.SecretKeySpec;
 @Configuration
 @EnableWebSecurity
 @EnableMethodSecurity
-public class JobSecurityConfig {
+public class JobTestappSecurityConfig {
 
     private static final String SWAGGER = "SWAGGER";
 

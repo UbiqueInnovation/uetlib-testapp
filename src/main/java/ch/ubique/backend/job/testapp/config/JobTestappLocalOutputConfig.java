@@ -10,11 +10,11 @@ import org.springframework.context.annotation.Configuration;
 import java.nio.file.Path;
 
 @Configuration
-public class JobLocalOutputConfig {
+public class JobTestappLocalOutputConfig {
 
     private final String localOutputDir;
 
-    public JobLocalOutputConfig(
+    public JobTestappLocalOutputConfig(
             @Value("/tmp/${spring.application.name}") final String localOutputDir) {
         this.localOutputDir = localOutputDir;
     }
