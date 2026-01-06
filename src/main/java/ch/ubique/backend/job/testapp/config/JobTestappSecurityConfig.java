@@ -2,7 +2,8 @@ package ch.ubique.backend.job.testapp.config;
 
 import static org.springframework.security.config.Customizer.withDefaults;
 
-import org.springframework.beans.factory.annotation.Value;
+import jakarta.servlet.DispatcherType;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
@@ -14,13 +15,8 @@ import org.springframework.security.config.annotation.web.configurers.AbstractHt
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.oauth2.jose.jws.MacAlgorithm;
-import org.springframework.security.oauth2.jwt.JwtDecoder;
-import org.springframework.security.oauth2.jwt.NimbusJwtDecoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
-
-import javax.crypto.spec.SecretKeySpec;
 
 @Profile("!no-security")
 @Configuration
@@ -31,7 +27,7 @@ public class JobTestappSecurityConfig {
     private static final String SWAGGER = "SWAGGER";
 
     @Bean
-    public SecurityFilterChain swaggerFilterChain(final HttpSecurity http) throws Exception {
+    public SecurityFilterChain swaggerFilterChain(final HttpSecurity http) {
         // swagger-ui
         http.securityMatcher("/api-docs/**", "/api-docs*")
                 .authorizeHttpRequests(
@@ -45,24 +41,26 @@ public class JobTestappSecurityConfig {
     }
 
     @Bean
-    public SecurityFilterChain bearerFilterChain(final HttpSecurity http) throws Exception {
+    public SecurityFilterChain bearerFilterChain(final HttpSecurity http) {
         http.csrf(AbstractHttpConfigurer::disable);
 
-        final var statusEndpointPattern = "/v1/status/**";
-        http.securityMatcher(statusEndpointPattern)
+        http.securityMatcher("/v1/**")
                 .authorizeHttpRequests(
                         authorize ->
                                 authorize
-                                        .requestMatchers(HttpMethod.OPTIONS, statusEndpointPattern)
+                                        .requestMatchers(HttpMethod.OPTIONS, "/v1/**")
                                         .permitAll()
-                                        .requestMatchers(statusEndpointPattern)
-                                        .authenticated())
-                .oauth2ResourceServer(customizer -> customizer.jwt(withDefaults()));
+                                        .requestMatchers(HttpMethod.GET, "/v1/info")
+                                        .permitAll()
+                                        .requestMatchers("/v1/**")
+                                        .authenticated());
 
         http.authorizeHttpRequests(
                 customizer ->
                         customizer
-                                .requestMatchers("/actuator/prometheus", "/v1/**")
+                                .dispatcherTypeMatchers(DispatcherType.ERROR)
+                                .authenticated()
+                                .requestMatchers("/actuator/prometheus", "/check")
                                 .permitAll()
                                 .anyRequest() // deny all others
                                 .denyAll());
@@ -78,14 +76,6 @@ public class JobTestappSecurityConfig {
                         .roles(SWAGGER)
                         .build();
         return new InMemoryUserDetailsManager(user);
-    }
-
-    @Bean
-    public JwtDecoder jwtDecoder(
-            @Value("${ch.ubique.backend.job.interface.secret}") final String secret) {
-        return NimbusJwtDecoder.withSecretKey(new SecretKeySpec(secret.getBytes(), "HmacSHA256"))
-                .macAlgorithm(MacAlgorithm.HS256)
-                .build();
     }
 
     @Bean

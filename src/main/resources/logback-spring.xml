@@ -9,7 +9,7 @@
     <!-- You can override this to have a custom pattern -->
     <!-- Make sure not to remove LOG_LEVEL_PATTERN, as it's needed by Sleuth -->
     <property name="CONSOLE_LOG_PATTERN"
-        value="%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr(${LOG_LEVEL_PATTERN:-%5p}) %clr(${PID:- }){magenta} %clr(---){faint} %clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %clr(%marker){green} %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}"/>
+              value="%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr(${LOG_LEVEL_PATTERN:-%5p}) %clr(${PID:- }){magenta} %clr(---){faint} %clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %clr(%marker){green} %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}"/>
 
     <!-- Appender to log to console -->
     <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
@@ -21,11 +21,15 @@
     </appender>
 
     <logger name="ch.ubique.backend" level="DEBUG"/>
+    <logger name="ch.ubique.backend.storage" level="TRACE"/>
+
     <logger name="org.springframework.web" level="DEBUG"/>
     <logger name="org.springframework.web.client.RestTemplate" level="INFO"/>
     <logger name="org.springframework.web.HttpLogging" level="INFO"/>
-    <logger name="org.hibernate.SQL" level="DEBUG"/>
-    <logger name="org.hibernate.orm.jdbc.bind" level="DEBUG"/>
+
+    <logger name="org.hibernate.SQL" level="INFO"/>
+    <logger name="org.hibernate.orm.jdbc.bind" level="INFO"/>
+
     <logger name="org.zalando.logbook" level="TRACE"/>
 
     <root level="INFO">
