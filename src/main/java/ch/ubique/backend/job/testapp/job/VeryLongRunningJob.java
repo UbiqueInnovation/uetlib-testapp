@@ -25,7 +25,7 @@ public class VeryLongRunningJob implements Job {
     public JobRunState run(final JobRunContext jobRunContext) {
         logger.debug("Running job with context {}", jobRunContext);
 
-        final var progressLogger = new ProgressLogger("VERY_SLOW_RUNNING_JOB", 1000);
+        final var progressLogger = new ProgressLogger("VERY_SLOW_RUNNING_JOB: ", 1000);
         IntStream.range(0, 1000).forEach(i -> progressLogger.watch(() -> runJobIteration(i)));
 
         return JobRunState.DONE;
