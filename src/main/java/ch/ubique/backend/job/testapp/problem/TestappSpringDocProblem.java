@@ -1,6 +1,6 @@
 package ch.ubique.backend.job.testapp.problem;
 
-import ch.ubique.backend.spring.boot.problem.springdoc.UetlibSpringDocProblem;
+import ch.ubique.backend.spring.boot.problem.springdoc.SpringDocProblem;
 
 public interface TestappSpringDocProblem
-        extends UetlibSpringDocProblem<TestappErrorType, TestappThrowableProblem> {}
+        extends SpringDocProblem<TestappErrorType, TestappThrowableProblem> {}
