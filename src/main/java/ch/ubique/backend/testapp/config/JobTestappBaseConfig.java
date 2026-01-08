@@ -1,4 +1,4 @@
-package ch.ubique.backend.job.testapp.config;
+package ch.ubique.backend.testapp.config;
 
 import ch.ubique.backend.core.jackson.ObjectMapperUtils;
 import ch.ubique.backend.job.annotation.EnableJobs;

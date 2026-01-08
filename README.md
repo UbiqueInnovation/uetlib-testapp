@@ -1,7 +1,3 @@
-# Uetlib Job TestApp
+# Uetlib Testapp
 
-Just a test app of the full uetlib and mainly the test framework
-
-## Changelog
-
-See [CHANGELOG.md](CHANGELOG.md)
+Just a test app of the full uetlib and test framework

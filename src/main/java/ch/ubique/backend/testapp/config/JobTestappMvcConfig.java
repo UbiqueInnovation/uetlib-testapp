@@ -1,4 +1,4 @@
-package ch.ubique.backend.job.testapp.config;
+package ch.ubique.backend.testapp.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.MediaType;
