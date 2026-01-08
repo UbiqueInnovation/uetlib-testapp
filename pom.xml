@@ -10,7 +10,7 @@
         <version>4.0.1</version>
     </parent>
 
-    <artifactId>uetlib-job-testapp</artifactId>
+    <artifactId>uetlib-testapp</artifactId>
 
     <properties>
         <java.version>25</java.version>

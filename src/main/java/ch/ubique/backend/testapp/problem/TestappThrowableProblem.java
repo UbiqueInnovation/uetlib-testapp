@@ -1,4 +1,4 @@
-package ch.ubique.backend.job.testapp.problem;
+package ch.ubique.backend.testapp.problem;
 
 import ch.ubique.backend.spring.boot.problem.AbstractThrowableProblem;
 import ch.ubique.backend.spring.boot.problem.ThrowableProblem;
@@ -11,7 +11,7 @@ import java.net.URI;
 public class TestappThrowableProblem extends AbstractThrowableProblem
         implements ThrowableProblem<TestappErrorType> {
 
-    public static final URI TYPE = URI.create("urn:ch:uetlib:job-testapp:problem:testapp");
+    public static final URI TYPE = URI.create("urn:ch:uetlib:testapp:problem:testapp");
 
     private final TestappErrorType errorType;
 

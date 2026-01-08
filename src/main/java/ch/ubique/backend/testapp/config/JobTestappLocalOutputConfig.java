@@ -1,4 +1,4 @@
-package ch.ubique.backend.job.testapp.config;
+package ch.ubique.backend.testapp.config;
 
 import ch.ubique.backend.storage.StorageClient;
 import ch.ubique.backend.storage.clients.FileSystemStorageClient;

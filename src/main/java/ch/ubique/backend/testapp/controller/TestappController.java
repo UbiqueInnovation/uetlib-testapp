@@ -1,8 +1,8 @@
-package ch.ubique.backend.job.testapp.controller;
+package ch.ubique.backend.testapp.controller;
 
-import ch.ubique.backend.job.testapp.problem.TestappErrorType;
-import ch.ubique.backend.job.testapp.problem.TestappSpringDocProblem;
-import ch.ubique.backend.job.testapp.problem.TestappThrowableProblem;
+import ch.ubique.backend.testapp.problem.TestappErrorType;
+import ch.ubique.backend.testapp.problem.TestappSpringDocProblem;
+import ch.ubique.backend.testapp.problem.TestappThrowableProblem;
 import ch.ubique.backend.spring.validation.ValidateResponse;
 
 import io.swagger.v3.oas.annotations.Operation;

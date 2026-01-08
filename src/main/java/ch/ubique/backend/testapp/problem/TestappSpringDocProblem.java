@@ -1,4 +1,4 @@
-package ch.ubique.backend.job.testapp.problem;
+package ch.ubique.backend.testapp.problem;
 
 import ch.ubique.backend.spring.boot.problem.springdoc.SpringDocProblem;
 

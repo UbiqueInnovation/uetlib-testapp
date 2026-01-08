@@ -1,4 +1,4 @@
-package ch.ubique.backend.job.testapp.advice;
+package ch.ubique.backend.testapp.advice;
 
 import ch.ubique.backend.spring.boot.problem.handler.UetlibExceptionHandler;
 
