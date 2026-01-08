@@ -1,1 +1,0 @@
-org.springframework.boot.EnvironmentPostProcessor=ch.ubique.backend.job.testapp.processor.BuildPropertiesEnvironmentPostProcessor

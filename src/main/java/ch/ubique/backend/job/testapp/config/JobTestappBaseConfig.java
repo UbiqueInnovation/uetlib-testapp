@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
-import tools.jackson.databind.ObjectMapper;
+import tools.jackson.databind.json.JsonMapper;
 
 @Configuration
 @EntityScan(basePackages = "ch.ubique.backend.job.model.entity")
@@ -21,9 +21,9 @@ import tools.jackson.databind.ObjectMapper;
 public class JobTestappBaseConfig {
 
     @Bean
-    ObjectMapper objectMapper() {
+    JsonMapper jsonMapper() {
         // If you need JTS support for geometries, use ObjectMapperJtsUtils from geo module
-        return ObjectMapperUtils.objectMapper();
+        return ObjectMapperUtils.jsonMapper();
     }
 
     @Bean
