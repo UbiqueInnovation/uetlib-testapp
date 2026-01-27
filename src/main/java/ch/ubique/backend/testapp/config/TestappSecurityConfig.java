@@ -22,7 +22,7 @@ import org.springframework.security.web.SecurityFilterChain;
 @Configuration
 @EnableWebSecurity
 @EnableMethodSecurity
-public class JobTestappSecurityConfig {
+public class TestappSecurityConfig {
 
     private static final String SWAGGER = "SWAGGER";
 
@@ -51,6 +51,8 @@ public class JobTestappSecurityConfig {
                                         .requestMatchers(HttpMethod.OPTIONS, "/v1/**")
                                         .permitAll()
                                         .requestMatchers(HttpMethod.GET, "/v1/info")
+                                        .permitAll()
+                                        .requestMatchers(HttpMethod.GET, "/v1/problem/**")
                                         .permitAll()
                                         .requestMatchers("/v1/**")
                                         .authenticated());

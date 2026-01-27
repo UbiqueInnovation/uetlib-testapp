@@ -15,7 +15,7 @@ import java.util.Set;
 import java.util.stream.Stream;
 
 @Configuration
-public class JobTestappLoggingConfig {
+public class TestappLoggingConfig {
 
     /**
      * Enable this Logbook {@link BodyFilter} if the property {@code
