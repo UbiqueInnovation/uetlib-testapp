@@ -1,7 +1,7 @@
 ### problem NoSuchValue test
-GET {{baseurl}}/v1/testapp/problem-no-such-value-test
+GET {{baseurl}}/v1/problem/no-such-value-test
 Content-Type: application/json
 
 ### problem TestappProblem test
-GET {{baseurl}}/v1/testapp/problem-testapp-problem-test
+GET {{baseurl}}/v1/problem/testapp-problem-test
 Content-Type: application/json

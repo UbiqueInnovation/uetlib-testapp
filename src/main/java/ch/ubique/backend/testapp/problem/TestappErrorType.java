@@ -1,18 +1,31 @@
 package ch.ubique.backend.testapp.problem;
 
 import ch.ubique.backend.spring.boot.problem.errortype.ProblemErrorType;
+import ch.ubique.backend.spring.boot.problem.errortype.ProblemType;
+
+import org.jspecify.annotations.NonNull;
+
+import java.net.URI;
 
 public enum TestappErrorType implements ProblemErrorType {
-    TESTAPP(1);
+    TESTAPP_ERROR1("TE1");
 
-    private final int code;
+    @NonNull private final String code;
 
-    TestappErrorType(final int code) {
+    TestappErrorType(final @NonNull String code) {
         this.code = code;
     }
 
+    public static final ProblemType PROBLEM_TYPE =
+            new ProblemType(URI.create("urn:ch:uetlib:testapp:problem:testapp"), "TA");
+
     @Override
-    public int code() {
+    public @NonNull ProblemType problemType() {
+        return PROBLEM_TYPE;
+    }
+
+    @Override
+    public @NonNull String code() {
         return code;
     }
 }

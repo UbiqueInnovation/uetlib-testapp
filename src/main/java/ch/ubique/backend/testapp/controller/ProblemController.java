@@ -1,9 +1,9 @@
 package ch.ubique.backend.testapp.controller;
 
-import ch.ubique.backend.testapp.problem.TestappErrorType;
-import ch.ubique.backend.testapp.problem.TestappSpringDocProblem;
-import ch.ubique.backend.testapp.problem.TestappThrowableProblem;
 import ch.ubique.backend.spring.validation.ValidateResponse;
+import ch.ubique.backend.testapp.problem.TestappErrorType;
+import ch.ubique.backend.testapp.problem.TestappException;
+import ch.ubique.backend.testapp.problem.TestappSpringDocProblem;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -22,18 +22,18 @@ import java.util.Optional;
 @Validated
 @ValidateResponse
 @RestController
-@RequestMapping("/v1/testapp")
-public class TestappController {
+@RequestMapping("/v1/problem")
+public class ProblemController {
 
     /** always throws {@link NoSuchElementException} */
-    @GetMapping("/problem-no-such-value-test")
+    @GetMapping("/no-such-value-test")
     public String problemNoSuchValueTest() {
         //noinspection DataFlowIssue
         return Optional.ofNullable(null).orElseThrow().toString();
     }
 
     /** always throws {@link TestappSpringDocProblem} */
-    @GetMapping("/problem-testapp-problem-test")
+    @GetMapping("/testapp-problem-test")
     @Operation(
             responses = {
                 @ApiResponse(responseCode = "200", description = "never happens"),
@@ -52,6 +52,6 @@ public class TestappController {
                         content = @Content(schema = @Schema(implementation = ProblemDetail.class)))
             })
     public String problemTestappProblemTest() {
-        throw new TestappThrowableProblem(TestappErrorType.TESTAPP);
+        throw new TestappException(TestappErrorType.TESTAPP_ERROR1);
     }
 }
