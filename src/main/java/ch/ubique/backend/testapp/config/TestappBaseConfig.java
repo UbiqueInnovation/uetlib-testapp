@@ -1,10 +1,12 @@
 package ch.ubique.backend.testapp.config;
 
 import ch.ubique.backend.job.annotation.EnableJobs;
+import ch.ubique.backend.spring.boot.jackson.UetlibJacksonGeoJtsLv95JsonMapperBuilderCustomizer;
 import ch.ubique.backend.storage.spring.annotations.EnableStorages;
 
 import org.apache.hc.client5.http.impl.classic.CloseableHttpClient;
 import org.apache.hc.client5.http.impl.classic.HttpClients;
+import org.springframework.boot.jackson.autoconfigure.JsonMapperBuilderCustomizer;
 import org.springframework.boot.persistence.autoconfigure.EntityScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -19,6 +21,11 @@ import java.util.Locale;
 @EnableJobs(basePackages = "ch.ubique.backend.job")
 @EnableStorages(basePackages = "ch.ubique.backend.job.storage")
 public class TestappBaseConfig {
+
+    @Bean
+    JsonMapperBuilderCustomizer jacksonGeoJtsLv95JsonMapperBuilderCustomizer() {
+        return new UetlibJacksonGeoJtsLv95JsonMapperBuilderCustomizer();
+    }
 
     @Bean
     ResourceBundleMessageSource messageSource() {
