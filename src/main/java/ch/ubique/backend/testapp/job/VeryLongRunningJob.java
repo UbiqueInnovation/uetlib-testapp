@@ -35,7 +35,7 @@ public class VeryLongRunningJob implements Job {
         logger.info("Running job iteration {}, will sleep for 1 second", i);
         try {
             Thread.sleep(Duration.ofSeconds(1));
-        } catch (InterruptedException e) {
+        } catch (final InterruptedException e) {
             throw new RuntimeException(e);
         }
     }
