@@ -10,14 +10,14 @@ import java.net.URI;
 public enum TestappErrorType implements ProblemErrorType {
     TESTAPP_ERROR1("TE1");
 
+    public static final ProblemType PROBLEM_TYPE =
+            new ProblemType(URI.create("urn:ch:uetlib:testapp:problem:testapp"), "TA");
+
     @NonNull private final String code;
 
     TestappErrorType(final @NonNull String code) {
         this.code = code;
     }
-
-    public static final ProblemType PROBLEM_TYPE =
-            new ProblemType(URI.create("urn:ch:uetlib:testapp:problem:testapp"), "TA");
 
     @Override
     public @NonNull ProblemType problemType() {
