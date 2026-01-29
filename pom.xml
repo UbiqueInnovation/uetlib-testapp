@@ -10,7 +10,11 @@
         <version>4.0.2</version>
     </parent>
 
+    <groupId>ch.ubique</groupId>
     <artifactId>uetlib-testapp</artifactId>
+    <packaging>jar</packaging>
+    <version>2.0.0-SNAPSHOT</version>
+    <name>Uetlib Testapp</name>
 
     <properties>
         <java.version>25</java.version>
