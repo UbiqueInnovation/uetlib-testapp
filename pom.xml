@@ -13,7 +13,7 @@
     <groupId>ch.ubique</groupId>
     <artifactId>uetlib-testapp</artifactId>
     <packaging>jar</packaging>
-    <version>2026.0.0-SNAPSHOT</version>
+    <version>2027.0.0-SNAPSHOT</version>
     <name>Uetlib Testapp</name>
 
     <properties>
