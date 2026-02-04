@@ -1,33 +1,28 @@
 name: Build
 on:
   push:
-    branches:
-      - '**'
-    tags-ignore:
-      - v*
+    branches: [ '**' ]
+    tags-ignore: [ v* ]
 
 jobs:
   build:
     name: Build Project
-    uses: UbiqueInnovation/workflows-backend/.github/workflows/mvn_install.yml@main
-    with:
-      parent_pom: pom.xml
-      ref_name: ${{ github.ref_name }}
-    secrets:
-      artifactory_user: ${{ secrets.UB_ARTIFACTORY_USER}}
-      artifactory_password: ${{ secrets.UB_ARTIFACTORY_PASSWORD }}
-      artifactory_url: ${{ secrets.UB_ARTIFACTORY_URL }}
-      artifactory_repo: ${{ secrets.UB_ARTIFACTORY_REPO_BACKEND }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+        with:
+          ref: ${{ github.ref_name }}
 
-  deploy-dev-code_quality:
-    name: Code Analysis (Sonar Cloud)
-    uses: UbiqueInnovation/workflows-backend/.github/workflows/mvn_verify_sonar.yml@main
-    with:
-      parent_pom: pom.xml
-      ref_name: ${{ github.ref_name }}
-    secrets:
-      artifactory_user: ${{ secrets.UB_ARTIFACTORY_USER}}
-      artifactory_password: ${{ secrets.UB_ARTIFACTORY_PASSWORD }}
-      artifactory_url: ${{ secrets.UB_ARTIFACTORY_URL }}
-      artifactory_repo: ${{ secrets.UB_ARTIFACTORY_REPO_BACKEND }}
-      sonar_token: ${{ secrets.UBIQUE_SONAR_TOKEN }}
+      - name: Prepare maven
+        uses: UbiqueInnovation/action-systems-mvn-prepare@1f1440329f80458fcbf99214a888160840196d17 # v1.1.0
+        with:
+          mvn_repository_id: ubique-artifactory
+          mvn_repository_user: ${{ secrets.UB_ARTIFACTORY_USER }}
+          mvn_repository_password: ${{ secrets.UB_ARTIFACTORY_PASSWORD }}
+          mvn_repository_url: ${{ secrets.UB_ARTIFACTORY_URL }}${{ secrets.UB_ARTIFACTORY_REPO_BACKEND }}
+
+      - name: Maven Install
+        uses: UbiqueInnovation/action-systems-mvn-install@4cb656bce2a93be50d8109150364d38b8954c4c7 # v1.1.3
+        with:
+          parent_pom: pom.xml
