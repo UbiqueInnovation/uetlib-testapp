@@ -1,0 +1,26 @@
+name: Create GitHub Release
+on:
+  push:
+    tags: [ v* ]
+
+jobs:
+  create_github_release:
+    name: Create GitHub Release
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6
+        with:
+          ref: ${{ github.ref_name }}
+
+      # Create a GitHub release
+
+      - name: Create new ${{ contains(github.ref_name, '-') == true && 'Prerelease' || 'Release' }}
+        uses: UbiqueInnovation/action-systems-github-release@5db68dd4a817a585f4a0a9aa7a2cbb8b32cc4433 # v1.0.1
+        with:
+          ref_name: ${{ github.ref_name }}
+          release_option_prerelease: ${{ contains(github.ref_name, '-') }}
+          changelog_file: CHANGELOG.md
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
