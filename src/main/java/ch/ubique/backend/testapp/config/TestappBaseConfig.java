@@ -1,7 +1,7 @@
 package ch.ubique.backend.testapp.config;
 
 import ch.ubique.backend.job.annotation.EnableJobs;
-import ch.ubique.backend.spring.boot.jackson.UetlibJacksonGeoJtsLv95JsonMapperBuilderCustomizer;
+import ch.ubique.backend.spring.boot.geo.jackson.UetlibJacksonGeoJtsLv95JsonMapperBuilderCustomizer;
 import ch.ubique.backend.storage.spring.annotations.EnableStorages;
 
 import org.apache.hc.client5.http.impl.classic.CloseableHttpClient;
