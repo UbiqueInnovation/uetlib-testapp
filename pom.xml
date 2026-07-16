@@ -5,9 +5,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>4.0.6</version>
+        <groupId>ch.ubique</groupId>
+        <artifactId>uetlib-spring-boot-starter-parent</artifactId>
+        <version>4.1.0-2026.07.7</version>
     </parent>
 
     <groupId>ch.ubique</groupId>
@@ -20,8 +20,10 @@
         <java.version>25</java.version>
         <maven.compiler.release>${java.version}</maven.compiler.release>
 
+        <!-- westemeyer version config -->
+        <westemeyer-version-package-name>ch.ubique.backend.testapp.version</westemeyer-version-package-name>
+
         <!-- Sonar-->
-        <jacoco.version>0.8.14</jacoco.version>
         <sonar.projectKey>UbiqueInnovation_${project.artifactId}</sonar.projectKey>
         <sonar.organization>ubiqueinnovation</sonar.organization>
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
@@ -107,36 +109,12 @@
         </dependency>
     </dependencies>
 
-    <dependencyManagement>
-        <dependencies>
-            <!-- 🧱 Base / Platform BOMs (foundation first) -->
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-dependencies</artifactId>
-                <version>2025.1.1</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-
-            <!-- 🏢 Enterprise BOMs -->
-            <dependency>
-                <groupId>ch.ubique</groupId>
-                <artifactId>uetlib-bom</artifactId>
-                <version>2026.4.0</version>
-                <scope>import</scope>
-                <type>pom</type>
-            </dependency>
-            <dependency>
-                <groupId>ch.ubique</groupId>
-                <artifactId>uetlib-self-bom</artifactId>
-                <version>3.3.3</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
-
     <repositories>
+        <repository>
+            <id>ubique-artifactory</id>
+            <name>backend</name>
+            <url>https://artifactory.ubique.ch/artifactory/backend</url>
+        </repository>
         <repository>
             <id>ubique-artifactory-virtual</id>
             <name>ubique</name>
@@ -152,38 +130,24 @@
     <build>
         <plugins>
             <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>
-                                build-info
-                            </goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-
-            <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
-                <version>${jacoco.version}</version>
-                <executions>
-                    <execution>
-                        <id>prepare-agent</id>
-                        <goals>
-                            <goal>prepare-agent</goal>
-                        </goals>
-                    </execution>
-                    <execution>
-                        <id>report-aggregate</id>
-                        <phase>verify</phase>
-                        <goals>
-                            <goal>report-aggregate</goal>
-                        </goals>
-                    </execution>
-                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>de.westemeyer</groupId>
+                <artifactId>artifact-version-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>com.google.cloud.tools</groupId>
+                <artifactId>jib-maven-plugin</artifactId>
             </plugin>
         </plugins>
     </build>
