@@ -21,12 +21,9 @@
         <maven.compiler.release>${java.version}</maven.compiler.release>
 
         <!-- westemeyer version config -->
-        <westemeyer-version-package-name>ch.ubique.backend.testapp.version</westemeyer-version-package-name>
-
-        <!-- Sonar-->
-        <sonar.projectKey>UbiqueInnovation_${project.artifactId}</sonar.projectKey>
-        <sonar.organization>ubiqueinnovation</sonar.organization>
-        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+        <westemeyer-version-package-name>ch.ubique.backend.testapp.version</westemeyer-version-package-name>        <!-- Sonar -->
+        <sonar.projectName>uetlib-testapp</sonar.projectName>
+        <sonar.coverage.module>uetlib-testapp</sonar.coverage.module>
         <sonar.coverage.jacoco.xmlReportPaths>
             ${project.basedir}/target/site/jacoco-aggregate/jacoco.xml
         </sonar.coverage.jacoco.xmlReportPaths>
