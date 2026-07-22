@@ -21,7 +21,9 @@
         <maven.compiler.release>${java.version}</maven.compiler.release>
 
         <!-- westemeyer version config -->
-        <westemeyer-version-package-name>ch.ubique.backend.testapp.version</westemeyer-version-package-name>        <!-- Sonar -->
+        <westemeyer-version-package-name>ch.ubique.backend.testapp.version</westemeyer-version-package-name>
+        
+        <!-- Sonar -->
         <sonar.projectName>uetlib-testapp</sonar.projectName>
         <sonar.coverage.module>uetlib-testapp</sonar.coverage.module>
         <sonar.coverage.jacoco.xmlReportPaths>
