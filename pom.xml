@@ -8,6 +8,7 @@
         <groupId>ch.ubique</groupId>
         <artifactId>uetlib-spring-boot-starter-parent</artifactId>
         <version>4.1.0-2026.07.9</version>
+        <relativePath/>
     </parent>
 
     <groupId>ch.ubique</groupId>
@@ -108,23 +109,7 @@
         </dependency>
     </dependencies>
 
-    <repositories>
-        <repository>
-            <id>ubique-artifactory</id>
-            <name>backend</name>
-            <url>https://artifactory.ubique.ch/artifactory/backend</url>
-        </repository>
-        <repository>
-            <id>ubique-artifactory-virtual</id>
-            <name>ubique</name>
-            <url>https://artifactory.ubique.ch/artifactory/ubique</url>
-        </repository>
-        <repository>
-            <id>osgeo</id>
-            <name>Open Source Geospatial Foundation Repository</name>
-            <url>https://repo.osgeo.org/repository/release/</url>
-        </repository>
-    </repositories>
+
 
     <build>
         <plugins>
@@ -150,4 +135,20 @@
             </plugin>
         </plugins>
     </build>
+
+    <repositories>
+        <!-- ubique artifactory are necessary for resolution of the parent. -->
+        <!-- Other repositories are resolved in the parent repositories. -->
+        <repository>
+            <id>ubique-artifactory</id>
+            <name>backend</name>
+            <url>https://artifactory.ubique.ch/artifactory/backend</url>
+        </repository>
+        <repository>
+            <id>ubique-artifactory-virtual</id>
+            <name>ubique</name>
+            <url>https://artifactory.ubique.ch/artifactory/ubique</url>
+        </repository>
+    </repositories>
+
 </project>
