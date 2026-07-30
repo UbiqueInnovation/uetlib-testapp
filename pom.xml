@@ -151,4 +151,8 @@
         </repository>
     </repositories>
 
+
+    <scm child.scm.url.inherit.append.path="false">
+        <url>https://github.com/UbiqueInnovation/uetlib-testapp</url>
+    </scm>
 </project>
