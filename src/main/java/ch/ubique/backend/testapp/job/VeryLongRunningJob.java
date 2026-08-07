@@ -7,6 +7,7 @@ import ch.ubique.backend.job.model.JobRunContext;
 import ch.ubique.backend.job.model.JobRunState;
 import ch.ubique.backend.job.model.properties.JobPropertiesConfig;
 import ch.ubique.backend.job.model.properties.JobPropertyDefinitions;
+import ch.ubique.backend.job.model.runner.conditions.JobRunnerTaint;
 
 import jakarta.validation.constraints.NotNull;
 
@@ -14,6 +15,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.time.Duration;
+import java.util.Set;
 import java.util.stream.IntStream;
 
 @RegisteredJob
@@ -36,6 +38,7 @@ public class VeryLongRunningJob implements Job {
         try {
             Thread.sleep(Duration.ofSeconds(1));
         } catch (final InterruptedException e) {
+            Thread.currentThread().interrupt();
             throw new RuntimeException(e);
         }
     }
@@ -44,6 +47,8 @@ public class VeryLongRunningJob implements Job {
     public @NotNull JobPropertiesConfig propertiesConfig() {
         return JobPropertiesConfig.initial(
                 JobPropertyDefinitions.LAST_RUN_MAX_AGE.createProperty(Duration.ofDays(10000)),
-                JobPropertyDefinitions.LAST_RUN_MAX_AGE_ALLOW_NO_RUN.createProperty(true));
+                JobPropertyDefinitions.LAST_RUN_MAX_AGE_ALLOW_NO_RUN.createProperty(true),
+                JobPropertyDefinitions.JOB_RUN_TAINTS.createProperty(
+                        Set.of(JobRunnerTaint.from("very-long-instance"))));
     }
 }

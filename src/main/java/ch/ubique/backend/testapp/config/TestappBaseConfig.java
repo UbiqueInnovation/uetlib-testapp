@@ -18,7 +18,7 @@ import java.util.Locale;
 @Configuration
 @EntityScan(basePackages = "ch.ubique.backend.job.model.entity")
 @EnableJpaRepositories(basePackages = "ch.ubique.backend.job.data.repository")
-@EnableJobs(basePackages = "ch.ubique.backend.job")
+@EnableJobs(basePackages = {"ch.ubique.backend.job", "ch.ubique.backend.testapp.job"})
 @EnableStorages(basePackages = "ch.ubique.backend.job.storage")
 public class TestappBaseConfig {
 

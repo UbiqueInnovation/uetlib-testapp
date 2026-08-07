@@ -1,0 +1,10 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="UetlibTestappApplication: VeryLongRunningJob" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+    <module name="uetlib-testapp" />
+    <option name="PROGRAM_PARAMETERS" value="--job ch.ubique.backend.testapp.job.VeryLongRunningJob" />
+    <option name="SPRING_BOOT_MAIN_CLASS" value="ch.ubique.backend.testapp.UetlibTestappApplication" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
