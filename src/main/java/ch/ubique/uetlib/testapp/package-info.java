@@ -1,4 +1,4 @@
 @NullMarked
-package ch.ubique.backend.testapp.controller;
+package ch.ubique.uetlib.testapp;
 
 import org.jspecify.annotations.NullMarked;

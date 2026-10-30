@@ -1,23 +1,20 @@
-package ch.ubique.backend.testapp.controller;
+package ch.ubique.uetlib.testapp.controller;
 
-import ch.ubique.backend.spring.validation.ValidateResponse;
-import ch.ubique.backend.testapp.problem.TestappErrorType;
-import ch.ubique.backend.testapp.problem.TestappException;
-import ch.ubique.backend.testapp.problem.TestappSpringDocProblem;
-
+import ch.ubique.uetlib.spring.validation.ValidateResponse;
+import ch.ubique.uetlib.testapp.problem.TestappErrorType;
+import ch.ubique.uetlib.testapp.problem.TestappException;
+import ch.ubique.uetlib.testapp.problem.TestappSpringDocProblem;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
-
+import java.util.NoSuchElementException;
+import java.util.Optional;
 import org.springframework.http.ProblemDetail;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.NoSuchElementException;
-import java.util.Optional;
 
 @Validated
 @ValidateResponse

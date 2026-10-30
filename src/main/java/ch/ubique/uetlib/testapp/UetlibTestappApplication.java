@@ -1,14 +1,13 @@
-package ch.ubique.backend.testapp;
+package ch.ubique.uetlib.testapp;
 
-import ch.ubique.backend.job.JobApplication;
-
+import ch.ubique.uetlib.job.JobApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication(
         scanBasePackages = {
-            "ch.ubique.backend.testapp",
-            "ch.ubique.backend.job",
-            "ch.ubique.backend.monitoring"
+            "ch.ubique.uetlib.testapp",
+            "ch.ubique.uetlib.job",
+            "ch.ubique.uetlib.monitoring"
         })
 public class UetlibTestappApplication {
 
