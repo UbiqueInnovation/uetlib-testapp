@@ -1,20 +1,17 @@
-package ch.ubique.backend.testapp.job;
+package ch.ubique.uetlib.testapp.job;
 
-import ch.ubique.backend.core.utils.ProgressLogger;
-import ch.ubique.backend.job.Job;
-import ch.ubique.backend.job.RegisteredJob;
-import ch.ubique.backend.job.model.JobRunContext;
-import ch.ubique.backend.job.model.JobRunState;
-import ch.ubique.backend.job.model.properties.JobPropertiesConfig;
-import ch.ubique.backend.job.model.properties.JobPropertyDefinitions;
-
+import ch.ubique.uetlib.core.utils.ProgressLogger;
+import ch.ubique.uetlib.job.Job;
+import ch.ubique.uetlib.job.RegisteredJob;
+import ch.ubique.uetlib.job.model.JobRunContext;
+import ch.ubique.uetlib.job.model.JobRunState;
+import ch.ubique.uetlib.job.model.properties.JobPropertiesConfig;
+import ch.ubique.uetlib.job.model.properties.JobPropertyDefinitions;
 import jakarta.validation.constraints.NotNull;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.time.Duration;
 import java.util.stream.IntStream;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @RegisteredJob
 public class VeryLongRunningJob implements Job {

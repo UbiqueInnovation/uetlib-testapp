@@ -1,9 +1,8 @@
-package ch.ubique.backend.testapp.config;
+package ch.ubique.uetlib.testapp.config;
 
 import static org.springframework.security.config.Customizer.withDefaults;
 
 import jakarta.servlet.DispatcherType;
-
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;

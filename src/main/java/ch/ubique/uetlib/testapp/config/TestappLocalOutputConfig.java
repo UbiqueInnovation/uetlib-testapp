@@ -1,13 +1,11 @@
-package ch.ubique.backend.testapp.config;
+package ch.ubique.uetlib.testapp.config;
 
-import ch.ubique.backend.storage.StorageClient;
-import ch.ubique.backend.storage.clients.FileSystemStorageClient;
-
+import ch.ubique.uetlib.storage.StorageClient;
+import ch.ubique.uetlib.storage.clients.FileSystemStorageClient;
+import java.nio.file.Path;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-
-import java.nio.file.Path;
 
 @Configuration
 public class TestappLocalOutputConfig {

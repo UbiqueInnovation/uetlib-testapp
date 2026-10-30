@@ -1,5 +1,7 @@
-package ch.ubique.backend.testapp.config;
+package ch.ubique.uetlib.testapp.config;
 
+import java.util.Set;
+import java.util.stream.Stream;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -11,15 +13,12 @@ import org.zalando.logbook.core.BodyReplacers;
 import org.zalando.logbook.core.Conditions;
 import org.zalando.logbook.core.ResponseFilters;
 
-import java.util.Set;
-import java.util.stream.Stream;
-
 @Configuration
 public class TestappLoggingConfig {
 
     /**
      * Enable this Logbook {@link BodyFilter} if the property {@code
-     * ch.ubique.backend.job.testapp.logbook.body-filter.enabled} equals {@code true} or is missing
+     * ch.ubique.uetlib.job.testapp.logbook.body-filter.enabled} equals {@code true} or is missing
      * (default)
      */
     @Bean
@@ -36,7 +35,7 @@ public class TestappLoggingConfig {
 
     /**
      * This represents a disabled Logbook {@link BodyFilter} if the property {@code
-     * ch.ubique.backend.job.testapp.logbook.body-filter.enabled} equals {@code false}
+     * ch.ubique.uetlib.job.testapp.logbook.body-filter.enabled} equals {@code false}
      */
     @Bean
     @ConditionalOnProperty(

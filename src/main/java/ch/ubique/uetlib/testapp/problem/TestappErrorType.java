@@ -1,11 +1,9 @@
-package ch.ubique.backend.testapp.problem;
+package ch.ubique.uetlib.testapp.problem;
 
-import ch.ubique.backend.spring.boot.problem.errortype.ProblemErrorType;
-import ch.ubique.backend.spring.boot.problem.errortype.ProblemType;
-
-import org.jspecify.annotations.NonNull;
-
+import ch.ubique.uetlib.spring.boot.problem.errortype.ProblemErrorType;
+import ch.ubique.uetlib.spring.boot.problem.errortype.ProblemType;
 import java.net.URI;
+import org.jspecify.annotations.NonNull;
 
 public enum TestappErrorType implements ProblemErrorType {
     TESTAPP_ERROR1("TE1");
