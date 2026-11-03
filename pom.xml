@@ -37,6 +37,10 @@
         </developer>
     </developers>
 
+    <properties>
+        <central.publishing.skip>true</central.publishing.skip>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>ch.ubique.uetlib</groupId>

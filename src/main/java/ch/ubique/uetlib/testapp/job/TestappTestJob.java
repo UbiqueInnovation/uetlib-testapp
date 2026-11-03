@@ -6,10 +6,13 @@ import ch.ubique.uetlib.job.model.JobRunContext;
 import ch.ubique.uetlib.job.model.JobRunState;
 import ch.ubique.uetlib.job.model.properties.JobPropertiesConfig;
 import ch.ubique.uetlib.job.model.properties.JobPropertyDefinitions;
+
 import jakarta.validation.constraints.NotNull;
-import java.time.Duration;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.time.Duration;
 
 @RegisteredJob
 public class TestappTestJob implements Job {
