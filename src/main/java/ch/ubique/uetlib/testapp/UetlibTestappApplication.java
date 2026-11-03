@@ -1,6 +1,7 @@
 package ch.ubique.uetlib.testapp;
 
 import ch.ubique.uetlib.job.JobApplication;
+
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication(

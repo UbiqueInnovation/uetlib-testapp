@@ -2,8 +2,8 @@ package ch.ubique.uetlib.testapp.config;
 
 import ch.ubique.uetlib.job.annotation.EnableJobs;
 import ch.ubique.uetlib.spring.boot.geo.jackson.UetlibJacksonGeoJtsLv95JsonMapperBuilderCustomizer;
-import ch.ubique.uetlib.storage.spring.annotations.EnableStorages;
-import java.util.Locale;
+import ch.ubique.uetlib.storage.spring.boot.annotations.EnableStorages;
+
 import org.apache.hc.client5.http.impl.classic.CloseableHttpClient;
 import org.apache.hc.client5.http.impl.classic.HttpClients;
 import org.springframework.boot.jackson.autoconfigure.JsonMapperBuilderCustomizer;
@@ -12,6 +12,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.ResourceBundleMessageSource;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+
+import java.util.Locale;
 
 @Configuration
 @EntityScan(basePackages = "ch.ubique.uetlib.job.model.entity")

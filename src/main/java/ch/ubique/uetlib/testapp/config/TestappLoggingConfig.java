@@ -1,7 +1,5 @@
 package ch.ubique.uetlib.testapp.config;
 
-import java.util.Set;
-import java.util.stream.Stream;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -12,6 +10,9 @@ import org.zalando.logbook.core.BodyFilters;
 import org.zalando.logbook.core.BodyReplacers;
 import org.zalando.logbook.core.Conditions;
 import org.zalando.logbook.core.ResponseFilters;
+
+import java.util.Set;
+import java.util.stream.Stream;
 
 @Configuration
 public class TestappLoggingConfig {
