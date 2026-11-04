@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>ch.ubique.uetlib</groupId>
+        <groupId>ch.uetlib</groupId>
         <artifactId>uetlib-spring-boot-starter-parent</artifactId>
         <version>4.1.1-2026.11.0</version>
         <relativePath/>
@@ -43,11 +43,11 @@
 
     <dependencies>
         <dependency>
-            <groupId>ch.ubique.uetlib</groupId>
+            <groupId>ch.uetlib</groupId>
             <artifactId>uetlib-job</artifactId>
         </dependency>
         <dependency>
-            <groupId>ch.ubique.uetlib</groupId>
+            <groupId>ch.uetlib</groupId>
             <artifactId>uetlib-spring-boot-geo</artifactId>
         </dependency>
 
