@@ -1,11 +1,11 @@
-package ch.ubique.uetlib.testapp.job;
+package ch.uetlib.testapp.job;
 
-import ch.ubique.uetlib.job.Job;
-import ch.ubique.uetlib.job.RegisteredJob;
-import ch.ubique.uetlib.job.model.JobRunContext;
-import ch.ubique.uetlib.job.model.JobRunState;
-import ch.ubique.uetlib.job.model.properties.JobPropertiesConfig;
-import ch.ubique.uetlib.job.model.properties.JobPropertyDefinitions;
+import ch.uetlib.job.Job;
+import ch.uetlib.job.RegisteredJob;
+import ch.uetlib.job.model.JobRunContext;
+import ch.uetlib.job.model.JobRunState;
+import ch.uetlib.job.model.properties.JobPropertiesConfig;
+import ch.uetlib.job.model.properties.JobPropertyDefinitions;
 
 import jakarta.validation.constraints.NotNull;
 
