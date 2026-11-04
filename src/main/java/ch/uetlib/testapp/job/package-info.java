@@ -1,4 +1,4 @@
 @NullMarked
-package ch.ubique.uetlib.testapp.config;
+package ch.uetlib.testapp.job;
 
 import org.jspecify.annotations.NullMarked;

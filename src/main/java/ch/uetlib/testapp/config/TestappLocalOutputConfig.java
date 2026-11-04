@@ -1,7 +1,7 @@
-package ch.ubique.uetlib.testapp.config;
+package ch.uetlib.testapp.config;
 
-import ch.ubique.uetlib.storage.StorageClient;
-import ch.ubique.uetlib.storage.clients.FileSystemStorageClient;
+import ch.uetlib.storage.StorageClient;
+import ch.uetlib.storage.clients.FileSystemStorageClient;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;

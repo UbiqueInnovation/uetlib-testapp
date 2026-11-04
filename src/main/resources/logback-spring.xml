@@ -20,8 +20,8 @@
         </encoder>
     </appender>
 
-    <logger name="ch.ubique.uetlib" level="DEBUG"/>
-    <logger name="ch.ubique.uetlib.storage" level="TRACE"/>
+    <logger name="ch.uetlib" level="DEBUG"/>
+    <logger name="ch.uetlib.storage" level="TRACE"/>
 
     <logger name="org.springframework.web" level="DEBUG"/>
     <logger name="org.springframework.web.client.RestTemplate" level="INFO"/>

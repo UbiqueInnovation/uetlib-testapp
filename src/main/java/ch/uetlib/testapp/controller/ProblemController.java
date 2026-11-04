@@ -1,9 +1,9 @@
-package ch.ubique.uetlib.testapp.controller;
+package ch.uetlib.testapp.controller;
 
-import ch.ubique.uetlib.spring.boot.validation.ValidateResponse;
-import ch.ubique.uetlib.testapp.problem.TestappErrorType;
-import ch.ubique.uetlib.testapp.problem.TestappException;
-import ch.ubique.uetlib.testapp.problem.TestappSpringDocProblem;
+import ch.uetlib.spring.boot.validation.ValidateResponse;
+import ch.uetlib.testapp.problem.TestappErrorType;
+import ch.uetlib.testapp.problem.TestappException;
+import ch.uetlib.testapp.problem.TestappSpringDocProblem;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
