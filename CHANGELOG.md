@@ -2,11 +2,15 @@
 
 ## 2.0.0 (unreleased)
 
+- Rename uetlib configuration keys and property references to `ch.uetlib.*`, including Spring bindings, `@Value`, conditions, scheduling expressions and configuration files. Migrate external deployment configuration as well.
+
+- Move `uetlib-spring-boot-geo` into the geo repository as `uetlib-geo-spring-boot`, with packages under `ch.uetlib.geo.spring.boot`; update consumers and migration mappings.
+
 - Move Java packages and class references from `ch.ubique.uetlib` to `ch.uetlib`.
 
 ### Breaking changes
 
-- Move Java packages from `ch.ubique.backend` to `ch.uetlib`, including class-name resources. Existing Spring configuration property keys are unchanged.
+- Move Java packages from `ch.ubique.backend` to `ch.uetlib`, including class-name resources. The combined OpenRewrite migration also renames known Spring configuration keys to `ch.uetlib.*`.
 - Remove the inherited Ubique Artifactory repository and deployment destination; private consumers must configure their own registry.
 - Add Apache-2.0 licensing for original code, preserve third-party licenses, and add public project metadata and contribution/security guidance.
 

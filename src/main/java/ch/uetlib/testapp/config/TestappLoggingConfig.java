@@ -19,12 +19,11 @@ public class TestappLoggingConfig {
 
     /**
      * Enable this Logbook {@link BodyFilter} if the property {@code
-     * ch.uetlib.job.testapp.logbook.body-filter.enabled} equals {@code true} or is missing
-     * (default)
+     * ch.uetlib.testapp.logbook.body-filter.enabled} equals {@code true} or is missing (default)
      */
     @Bean
     @ConditionalOnProperty(
-            value = "ch.ubique.backend.job.testapp.logbook.body-filter.enabled",
+            value = "ch.uetlib.testapp.logbook.body-filter.enabled",
             havingValue = "true",
             matchIfMissing = true)
     BodyFilter logbookBodyFilterEnabled() {
@@ -36,11 +35,11 @@ public class TestappLoggingConfig {
 
     /**
      * This represents a disabled Logbook {@link BodyFilter} if the property {@code
-     * ch.uetlib.job.testapp.logbook.body-filter.enabled} equals {@code false}
+     * ch.uetlib.testapp.logbook.body-filter.enabled} equals {@code false}
      */
     @Bean
     @ConditionalOnProperty(
-            value = "ch.ubique.backend.job.testapp.logbook.body-filter.enabled",
+            value = "ch.uetlib.testapp.logbook.body-filter.enabled",
             havingValue = "false")
     BodyFilter logbookBodyFilterDisabled() {
         return BodyFilters.replaceFormUrlEncodedProperty(Set.of(), "XXX");
