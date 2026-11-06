@@ -48,7 +48,7 @@
         </dependency>
         <dependency>
             <groupId>ch.uetlib</groupId>
-            <artifactId>uetlib-spring-boot-geo</artifactId>
+            <artifactId>uetlib-geo-spring-boot</artifactId>
         </dependency>
 
         <dependency>

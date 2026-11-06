@@ -1,7 +1,7 @@
 package ch.uetlib.testapp.config;
 
+import ch.uetlib.geo.spring.boot.jackson.UetlibJacksonGeoJtsLv95JsonMapperBuilderCustomizer;
 import ch.uetlib.job.annotation.EnableJobs;
-import ch.uetlib.spring.boot.geo.jackson.UetlibJacksonGeoJtsLv95JsonMapperBuilderCustomizer;
 import ch.uetlib.storage.spring.boot.annotations.EnableStorages;
 
 import org.apache.hc.client5.http.impl.classic.CloseableHttpClient;
