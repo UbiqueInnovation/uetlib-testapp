@@ -1,6 +1,6 @@
-package ch.ubique.backend.testapp.advice;
+package ch.uetlib.testapp.advice;
 
-import ch.ubique.backend.spring.boot.problem.handler.UetlibExceptionHandler;
+import ch.uetlib.spring.boot.problem.handler.UetlibExceptionHandler;
 
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 

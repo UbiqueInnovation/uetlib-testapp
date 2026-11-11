@@ -1,7 +1,7 @@
-package ch.ubique.backend.testapp.problem;
+package ch.uetlib.testapp.problem;
 
-import ch.ubique.backend.spring.boot.problem.AbstractThrowableProblem;
-import ch.ubique.backend.spring.boot.problem.ThrowableProblem;
+import ch.uetlib.spring.boot.problem.AbstractThrowableProblem;
+import ch.uetlib.spring.boot.problem.ThrowableProblem;
 
 import org.jspecify.annotations.NonNull;
 import org.springframework.http.HttpStatus;
