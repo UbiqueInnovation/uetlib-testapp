@@ -1,7 +1,7 @@
-package ch.ubique.backend.testapp.problem;
+package ch.uetlib.testapp.problem;
 
-import ch.ubique.backend.spring.boot.problem.errortype.ProblemErrorType;
-import ch.ubique.backend.spring.boot.problem.errortype.ProblemType;
+import ch.uetlib.spring.boot.problem.errortype.ProblemErrorType;
+import ch.uetlib.spring.boot.problem.errortype.ProblemType;
 
 import org.jspecify.annotations.NonNull;
 

@@ -1,4 +1,4 @@
-package ch.ubique.backend.testapp.config;
+package ch.uetlib.testapp.config;
 
 import static org.springframework.security.config.Customizer.withDefaults;
 

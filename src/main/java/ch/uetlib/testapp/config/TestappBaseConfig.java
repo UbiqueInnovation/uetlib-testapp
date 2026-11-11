@@ -1,8 +1,8 @@
-package ch.ubique.backend.testapp.config;
+package ch.uetlib.testapp.config;
 
-import ch.ubique.backend.job.annotation.EnableJobs;
-import ch.ubique.backend.spring.boot.geo.jackson.UetlibJacksonGeoJtsLv95JsonMapperBuilderCustomizer;
-import ch.ubique.backend.storage.spring.annotations.EnableStorages;
+import ch.uetlib.geo.spring.boot.jackson.UetlibJacksonGeoJtsLv95JsonMapperBuilderCustomizer;
+import ch.uetlib.job.annotation.EnableJobs;
+import ch.uetlib.storage.spring.boot.annotations.EnableStorages;
 
 import org.apache.hc.client5.http.impl.classic.CloseableHttpClient;
 import org.apache.hc.client5.http.impl.classic.HttpClients;
@@ -16,10 +16,10 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import java.util.Locale;
 
 @Configuration
-@EntityScan(basePackages = "ch.ubique.backend.job.model.entity")
-@EnableJpaRepositories(basePackages = "ch.ubique.backend.job.data.repository")
-@EnableJobs(basePackages = "ch.ubique.backend.job")
-@EnableStorages(basePackages = "ch.ubique.backend.job.storage")
+@EntityScan(basePackages = "ch.uetlib.job.model.entity")
+@EnableJpaRepositories(basePackages = "ch.uetlib.job.data.repository")
+@EnableJobs(basePackages = "ch.uetlib.job")
+@EnableStorages(basePackages = "ch.uetlib.job.storage")
 public class TestappBaseConfig {
 
     @Bean
