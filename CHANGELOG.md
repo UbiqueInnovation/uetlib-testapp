@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 2.0.2
+
+- Use shared Maven build workflow at `v1.0.0` to enforce formatting checks in CI.
+
 ## 2.0.1
 
 - Migrate configuration properties and references to `ch.uetlib.*`.
