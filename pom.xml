@@ -7,7 +7,7 @@
     <parent>
         <groupId>ch.uetlib</groupId>
         <artifactId>uetlib-spring-boot-starter-parent</artifactId>
-        <version>4.1.2-2026.11.3</version>
+        <version>4.1.2-2026.11.6</version>
         <relativePath/>
     </parent>
 
@@ -145,8 +145,8 @@
     </build>
 
 
-
-    <scm child.scm.url.inherit.append.path="false" child.scm.connection.inherit.append.path="false" child.scm.developerConnection.inherit.append.path="false">
+    <scm child.scm.url.inherit.append.path="false" child.scm.connection.inherit.append.path="false"
+         child.scm.developerConnection.inherit.append.path="false">
         <connection>scm:git:https://github.com/UbiqueInnovation/uetlib-testapp.git</connection>
         <developerConnection>scm:git:ssh://git@github.com/UbiqueInnovation/uetlib-testapp.git</developerConnection>
         <url>https://github.com/UbiqueInnovation/uetlib-testapp</url>
