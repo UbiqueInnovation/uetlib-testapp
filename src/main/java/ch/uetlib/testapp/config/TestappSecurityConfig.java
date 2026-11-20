@@ -30,11 +30,8 @@ public class TestappSecurityConfig {
     public SecurityFilterChain swaggerFilterChain(final HttpSecurity http) {
         // swagger-ui
         http.securityMatcher("/api-docs/**", "/api-docs*")
-                .authorizeHttpRequests(
-                        customizer ->
-                                customizer
-                                        .requestMatchers("/api-docs/**", "/api-docs*")
-                                        .hasRole(SWAGGER))
+                .authorizeHttpRequests(customizer ->
+                        customizer.requestMatchers("/api-docs/**", "/api-docs*").hasRole(SWAGGER))
                 .httpBasic(withDefaults());
 
         return http.build();
@@ -45,27 +42,25 @@ public class TestappSecurityConfig {
         http.csrf(AbstractHttpConfigurer::disable);
 
         http.securityMatcher("/v1/**")
-                .authorizeHttpRequests(
-                        authorize ->
-                                authorize
-                                        .requestMatchers(HttpMethod.OPTIONS, "/v1/**")
-                                        .permitAll()
-                                        .requestMatchers(HttpMethod.GET, "/v1/info")
-                                        .permitAll()
-                                        .requestMatchers(HttpMethod.GET, "/v1/problem/**")
-                                        .permitAll()
-                                        .requestMatchers("/v1/**")
-                                        .authenticated());
-
-        http.authorizeHttpRequests(
-                customizer ->
-                        customizer
-                                .dispatcherTypeMatchers(DispatcherType.ERROR)
-                                .authenticated()
-                                .requestMatchers("/actuator/prometheus", "/check")
+                .authorizeHttpRequests(authorize ->
+                        authorize
+                                .requestMatchers(HttpMethod.OPTIONS, "/v1/**")
                                 .permitAll()
-                                .anyRequest() // deny all others
-                                .denyAll());
+                                .requestMatchers(HttpMethod.GET, "/v1/info")
+                                .permitAll()
+                                .requestMatchers(HttpMethod.GET, "/v1/problem/**")
+                                .permitAll()
+                                .requestMatchers("/v1/**")
+                                .authenticated());
+
+        http.authorizeHttpRequests(customizer ->
+                customizer
+                        .dispatcherTypeMatchers(DispatcherType.ERROR)
+                        .authenticated()
+                        .requestMatchers("/actuator/prometheus", "/check")
+                        .permitAll()
+                        .anyRequest() // deny all others
+                        .denyAll());
         return http.build();
     }
 
