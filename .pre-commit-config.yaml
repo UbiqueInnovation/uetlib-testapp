@@ -1,0 +1,10 @@
+repos:
+  - repo: local
+    hooks:
+      - id: spotless
+        name: Spotless
+        entry: sh -c 'if command -v mvnd >/dev/null 2>&1; then exec mvnd "$@"; fi; exec mvn "$@"' --
+        args: [-B, -ntp, -f, "pom.xml", 'spotless:apply']
+        language: system
+        pass_filenames: false
+        files: '\.(java|kt|kts)$|(^|/)pom\.xml$'
